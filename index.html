@@ -15,23 +15,28 @@
             <h3>HOME</h3>
             <div class="score-home" id="home-score">0</div>
             <div class="btn-container">
-                <button id="home-btn1">+ 1</button>
-                <button id="home-btn2">+ 2</button>
-                <button id="home-btn3">+ 3</button>
+                <button id="home-btn1" class="home-btn">+ 1</button>
+                <button id="home-btn2" class="home-btn">+ 2</button>
+                <button id="home-btn3" class="home-btn">+ 3</button>
             </div>
         </div>
         <div class="score-container">
             <h3>GUEST</h3>
             <div class="score-guest" id="guest-score">0</div>
             <div class="btn-container">
-                <button id="guest-btn1">+ 1</button>
-                <button id="guest-btn2">+ 2</button>
-                <button id="guest-btn3">+ 3</button>
+                <button id="guest-btn1" class="guest-btn">+ 1</button>
+                <button id="guest-btn2" class="guest-btn">+ 2</button>
+                <button id="guest-btn3" class="guest-btn">+ 3</button>
             </div>
         </div>
     </div>
-    <div id="timer" class="timer"></div>
-    <button class="restart" id="restart">Restart</button>
+    <div id='timer-container' class="timer-container">
+        <div id="timer" class="timer">60 : 00</div>
+        <div class="btn-contain">
+            <button class="start" id="start">Start Game</button>
+            <button class="reset" id="reset">Reset</button>
+        </div>
+    </div>
     <script src="./index.js"></script>
 </body>
 

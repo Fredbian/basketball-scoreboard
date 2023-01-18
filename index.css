@@ -32,6 +32,7 @@ button {
     margin-left: 5px;
     height: 40px;
     width: 40px;
+    border-radius: 5px;
     background-color: rgb(14, 11, 43);
     border: 1px solid white;
     color: white;
@@ -48,9 +49,22 @@ button {
     font-weight: 900;
 }
 
-.restart {
-    display: block;
+.timer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-contain {
     margin: 0 auto;
+}
+
+.start {
+    margin-top: 30px;
+    width: 100px;
+}
+
+.reset {
+    margin-left: 20px;
     margin-top: 30px;
     width: 100px;
 }
@@ -62,5 +76,9 @@ button {
     width: 300px;
     height: 100px;
     background-color: black;
-
+    color: red;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    font-weight: 700;
 }
