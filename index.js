@@ -9,6 +9,7 @@ const guestBtn3 = document.getElementById('guest-btn3')
 const startBtn = document.getElementById('start')
 const resetBtn = document.getElementById('reset')
 const timeContainer = document.getElementById('timer-container')
+const message = document.getElementById('message')
 
 resetBtn.disabled = true
 homeBtn1.disabled = true
@@ -60,7 +61,6 @@ function timer() {
 }
 
 function reset() {
-    console.log('Game Reset!')
     resetBtn.disabled = true
     startBtn.disabled = false
     homeBtn1.disabled = true
@@ -73,11 +73,10 @@ function reset() {
     home.textContent = 0
     guest.textContent = 0
     timerEl.textContent = "60 : 00"
-    timeContainer.appendChild(`<p>Game reset!<p>`)
+    message.textContent = 'Game Reset !'
 }
 
 function newGame() {
-    console.log('Game Start!')
     startBtn.disabled = true
     resetBtn.disabled = false
     homeBtn1.disabled = false
@@ -87,7 +86,7 @@ function newGame() {
     guestBtn2.disabled = false
     guestBtn3.disabled = false
     countTime = setInterval(timer, 1000)
-    timeContainer.appendChild(`<p>Game reset!<p>`)
+    message.textContent = 'Game Start !'
 }
 
 
