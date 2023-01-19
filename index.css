@@ -71,6 +71,15 @@ button {
     font-weight: 700;
 }
 
+.winMessage {
+    margin-top: 30px;
+    text-align: center;
+    color: goldenrod;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
 .reset {
     margin-left: 20px;
     margin-top: 30px;

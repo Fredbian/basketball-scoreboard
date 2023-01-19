@@ -10,6 +10,7 @@ const startBtn = document.getElementById('start')
 const resetBtn = document.getElementById('reset')
 const timeContainer = document.getElementById('timer-container')
 const message = document.getElementById('message')
+const winMessage = document.getElementById('winMessage')
 
 resetBtn.disabled = true
 homeBtn1.disabled = true
@@ -20,11 +21,11 @@ guestBtn2.disabled = true
 guestBtn3.disabled = true
 
 
-const startingMinutes = 60
-let time = startingMinutes * 60
+const startingMinutes = 1
+let time = startingMinutes * 60 - 51
 const timerEl = document.getElementById('timer')
 
-
+console.log(time % 60)
 
 function homeAdd1() {
     home.textContent = Number(home.textContent) + 1
@@ -52,12 +53,33 @@ function guestAdd3() {
 
 
 function timer() {
-    const minutes = Math.floor(time / 60)
+    let minutes = Math.floor(time / 60)
     let seconds = time % 60
     // if seconds < 10, add '0' 
+    minutes = minutes < 10 ? '0' + minutes : minutes
     seconds = seconds < 10 ? '0' + seconds : seconds
     timerEl.textContent = `${minutes} : ${seconds}`
     time--
+
+    if (time === -1) {
+        // timerEl.textContent = `${minutes} : ${seconds}`
+        message.textContent = 'GAME OVER'
+        clearInterval(countTime)
+        startBtn.disabled = true
+        homeBtn1.disabled = true
+        homeBtn2.disabled = true
+        homeBtn3.disabled = true
+        guestBtn1.disabled = true
+        guestBtn2.disabled = true
+        guestBtn3.disabled = true
+        if (Number(home.textContent) > Number(guest.textContent)) {
+            winMessage.textContent = 'HOME TEAM WIN !!!'
+        } else if (Number(home.textContent) < Number(guest.textContent)) {
+            winMessage.textContent = 'GUEST TEAM WIN !!!'
+        } else {
+            winMessage.textContent = 'DRAW !!!'
+        }
+    }
 }
 
 function reset() {
@@ -72,8 +94,10 @@ function reset() {
     clearInterval(countTime)
     home.textContent = 0
     guest.textContent = 0
-    timerEl.textContent = "60 : 00"
+    time = startingMinutes * 60 - 51
+    timerEl.textContent = ''
     message.textContent = 'Game Reset !'
+    winMessage.textContent = ''
 }
 
 function newGame() {
